@@ -1,0 +1,732 @@
+<!doctype html>
+{% load staticfiles %}
+{% load live_support_tags %}
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>popoteafrica ||Booking</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- favicon
+        ============================================ -->
+            <link rel="shortcut icon" type="image/x-icon" href="{% static "img/favicon.ico"%}">
+
+        <!-- Google Fonts
+        ============================================ -->
+            <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+            <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- Bootstrap CSS
+        ============================================ -->
+            <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css"%}"/>
+
+        <!-- Fontawsome CSS
+        ============================================ -->
+            <link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.min.css"%}"/>
+
+        <!-- owl.carousel CSS
+        ============================================ -->
+            <link rel="stylesheet" type="text/css" href="{% static "css/owl.carousel.css"%}"/>
+
+        <!-- jquery-ui CSS
+        ============================================ -->
+            <link rel="stylesheet" type="text/css" href="{% static "css/jquery-ui.css"%}"/>
+
+        <!-- meanmenu CSS
+        ============================================ -->
+            <link rel="stylesheet" type="text/css" href="{% static "css/meanmenu.min.css"%}"/>
+
+        <!-- animate CSS
+        ============================================ -->
+            <link rel="stylesheet" type="text/css" href="{% static "css/animate.css"%}"/>
+
+            <!-- nivo slider CSS
+        ============================================ -->
+        <link rel="stylesheet" type="text/css" href="{% static "lib/nivo-slider/css/nivo-slider.css"%}"/>
+        <link rel="stylesheet" type="text/css" href="{% static "lib/nivo-slider/css/preview.css"%}" media="screen"/>
+
+        <!-- style CSS
+        ============================================ -->
+            <link rel="stylesheet" type="text/css" href="{% static "css/style.css"%}"/>
+
+        <!-- responsive CSS
+        ============================================ -->
+            <link rel="stylesheet" type="text/css" href="{% static "css/responsive.css"%}"/>
+
+        <!-- modernizr JS
+        ============================================ -->
+            <script src="{% static "js/vendor/modernizr-2.8.3.min.js"%}"/></script>
+
+
+
+        </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!--Header Area Start-->
+        <header>
+            <div class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 hidden-xs">
+                            <div class="currency-language">
+                                <div class="currency-menu">
+                                </div>
+                                <div class="language-menu">
+                                    <ul>
+                                        <li><a href="#" id="language-it">English <i class="fa fa-angle-down"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-sm-6 col-xs-12">
+                            <div class="header-top-right">
+                              <div class="login">
+                                  <a href="#" id="feedsit"><i class="fa fa-pencil-square-o"></i>{% now "jS F Y H:i" %}</a>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Logo Mainmenu Start-->
+            <div class="header-logo-menu">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="logo-menu-bg">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-12">
+                                        <div class="logo">
+                                            <a href="/home"><img src="{% static "img/logo/logo.png"%}" alt="ADVENTURES"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 hidden-sm hidden-xs">
+                                        <div class="mainmenu">
+                                            <nav>
+                                                <ul id="nav">
+                                                    <li><a href="/home">HOME</a></li>
+                                                    <li><a href="/safari-all-plans">Safaris</a>
+                                                        <div class="megamenu">
+                                                            <div class="megamenu-list clearfix">
+                                                                <span class="border-hover">
+                                                                    <a href="#" class="mega-image">
+                                                                        <img src="{% static "img/safari-1.jpg"%}" alt="">
+                                                                    </a>
+                                                                </span>
+                                                                <span>
+                                                                    <a href="#" class="mega-title">Northern Circuit</a>
+                                                                    <a href="/serengeti">Serengeti</a>
+                                                                    <a href="/olduvai-gorge">Olduvai Gorge</a>
+                                                                    <a href="/ngorongoro-crater">Ngorongoro Crater</a>
+                                                                    <a href="/manyara-national-park">Lake Manyara National Park</a>
+                                                                    <a href="/tarangire-national-park">Tarangire National Park</a>
+                                                                    <a href="/the-great-wildebeest-migration">The Great Wildebeest Migration</a>
+                                                                </span>
+                                                                <span>
+                                                                    <a href="#" class="mega-title">Southern Circuit</a>
+                                                                    <a href="/mikumi-national-park">Mikumi National Park</a>
+                                                                    <a href="/ruaha-national-park">Ruaha National Park</a>
+                                                                    <a href="/selous-game-eserve">Selous Game Reserve</a>
+                                                                </span>
+                                                                <span>
+                                                                    <a href="#" class="mega-title">Western Circuit</a>
+                                                                    <a href="/lake-tanganyika">Lake Tanganyika</a>
+                                                                    <a href="/gombe-stream-national-park">Gombe Stream National Park</a>
+                                                                </span>
+                                                            </div>
+                                                            <div><button id="bookbutton" class="booking-button-two" onclick="location.href='/safari-all-plans'">Open Dates</button></button></div>
+                                                        </div>
+                                                    </li>
+                                                    <li><a href="/kilimanjaro-all-plans">Mountain</a>
+                                                        <div class="megamenu">
+                                                            <div class="megamenu-list clearfix">
+                                                                <span>
+                                                                    <a href="#" class="mega-title">Kilimanjaro Routes</a>
+                                                                    <a href="/lemosho-seven-days">7 Days Lemosho Route</a>
+                                                                    <a href="/marangu-five-days">5 Days Marangu Route</a>
+                                                                    <a href="/northern-circuit-eight-days">8 Days Northern Circuit Route</a>
+                                                                    <a href="/machame-six-days">6 Days Machame Route</a>
+                                                                    <a href="/rongai-six-days">6 Days Rongai Route</a>
+                                                                    <a href="/umbwe-six-days">6 Days Umbwe Route</a>
+                                                                    <a href="/mweka">Mweka Route</a>
+                                                                </span>
+                                                                <span>
+                                                                    <a href="#" class="mega-title" id="titletodissapear">Kilimanjaro</a>
+                                                                    <a href="/lemosho-eight-days">8 Days Lemosho Route</a>
+                                                                    <a href="/marangu-six-days">6 Days Marangu Route </a>
+                                                                    <a href="/northern-circuit-nine-days">9 Days Northern Circuit Route</a>
+                                                                    <a href="/machame-seven-days">7 Days Machame Route</a>
+                                                                    <a href="/rongai-seven-days">7 Days Rongai Route</a>
+                                                                    <a href="/umbwe-seven-days">7 Days Umbwe Route</a>
+                                                                </span>
+                                                                <span class="border-hover">
+                                                                    <a href="#" class="mega-image">
+                                                                        <img src="{% static "img/ol-doinyo-lengai-1.jpg"%}" alt="">
+                                                                    </a>
+                                                                </span>
+
+                                                                <span>
+                                                                    <a href="#" class="mega-title">Other Mountain Adventures</a>
+                                                                    <a href="/meru">Meru</a>
+                                                                    <a href="/ol-doinyo-lengai">Ol Doinyo Lengai</a>
+                                                                </span>
+                                                            </div>
+                                                            <div><button id="bookbutton" class="booking-button-two" onclick="location.href='/kilimanjaro-all-plans'">Open Dates</button></button></div>
+                                                        </div>
+                                                    </li>
+                                                    <li><a href="/zanzibar-all-plans">Zanzibar</a>
+                                                        <div class="megamenu">
+                                                            <div class="megamenu-list clearfix">
+                                                                <span class="border-hover">
+                                                                    <a href="#" class="mega-image">
+                                                                        <img src="{% static "img/zanzibar-1.jpg"%}" alt="">
+                                                                    </a>
+                                                                </span>
+                                                                <span>
+                                                                    <a href="#" class="mega-title">LODGES & BEACH</a>
+                                                                    <a href="/sunshine-hotel-nungwe">Sunshine Hotel-Nungwe</a>
+                                                                    <a href="/jafery-house-spa-stone-town">Jafery House & Spa-Stone Town</a>
+                                                                    <a href="/zenji-hotel-stone-town">Zenji Hotel-Stone Town</a>
+                                                                    <a href="/lemon-house-stone-town">Lemon House-Stone Town</a>
+                                                                    <a href="/diamond-mapenzi-kiwengwe">Diamond Mapenzi-Kiwengwe</a>
+                                                                </span>
+
+                                                                <span class="border-hover">
+                                                                    <a href="#" class="mega-image">
+                                                                        <img src="{% static "img/zanzibar-2.jpg"%}" alt="">
+                                                                    </a>
+                                                                </span>
+
+                                                                <span>
+                                                                    <a href="#" class="mega-title">TOURS & EXCUSSION</a>
+                                                                    <a href="/evening-walk-in-stone-town">Evening walk in stone town</a>
+                                                                    <a href="/sundown-dhow-cruise">Sundown dhow Cruise</a>
+                                                                    <a href="/zanzibar-spice-tour">Zanzibar spice tour</a>
+                                                                    <a href="/the-jozani-forest">The Jozani Forest</a>
+                                                                    <a href="/stone-town-tour">Stone Town Tour</a>
+                                                                    <a href="/prison-island">Prison Island</a>
+                                                                    <a href="/the-dolphin">The Dolphin</a>
+                                                                </span>
+                                                                <div><button id="bookbutton" class="booking-button-two" onclick="location.href='/zanzibar-all-plans'">Open Dates</button></button></div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+
+                                                    <li class="drop-down"><a href="/one-day-all-plans">One Day Programs</a>
+                                                        <ul class="sub-menu">
+                                                          <li><a href="#" class="mega-title">Quick Links</a></li>
+                                                            <li><a href="/lake-chala">Lake Chala</a></li>
+                                                            <li><a href="/mandara-hut">Mandara Hut</a></li>
+                                                            <li><a href="/materuni-waterfalls">Materuni Waterfalls</a></li>
+                                                            <li><a href="/marangu-waterfalls">Marangu Waterfalls</a></li>
+                                                            <li><a href="/kikuletwa-hot-springs">Kikuletwa Hot Springs</a></li>
+                                                            <li><a href="/Olpopongi-masai-museum">Olpopongi Masai Museum</a></li>
+                                                            <div><button id="bookbutton" class="booking-button-two" onclick="location.href='/one-day-all-plans'">Open Dates</button></button></div>
+                                                        </ul>
+                                                    </li>
+
+                                                    <li class="drop-down"><a href="#">Pages</a>
+                                                        <ul class="sub-menu" id="sub-menu1">
+                                                          <li><a href="#" class="mega-title">Quick Links</a></li>
+                                                            <li><a href="/feeds">Feeds</a></li>
+                                                            <li><a href="/about">About Us</a></li>
+                                                            <!--<li><a href="/signin/">Register/ Sign In</a></li>-->
+                                                            <li><a href="/contactus">Contact Us</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End of Logo Mainmenu-->
+            <!-- Mobile Menu Area start -->
+            <div class="mobile-menu-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul>
+                                        <li><a href="/home">HOME</a>
+                                        <li><a href="/safari-all-plans">Safari</a>
+                                            <ul>
+                                                <li><a href="#">Northern Circuit</a>
+                                                  <ul>
+                                                    <li><a href="/serengeti">Serengeti</a></li>
+                                                    <li><a href="/olduvai-gorge">Olduvai Gorge</a></li>
+                                                    <li><a href="/ngorongoro-crater">Ngorongoro Crater</a></li>
+                                                    <li><a href="/manyara-national-park">Lake Manyara National Park</a></li>
+                                                    <li><a href="/tarangire-national-park">Tarangire National Park</a></li>
+                                                    <li><a href="/the-great-wildebeest-migration">The Great Wildebeest Migration</a></li>
+                                                  </ul>
+                                                </li>
+
+                                                <li><a href="#">Southern Circuit</a>
+                                                  <ul>
+                                                      <li><a href="/mikumi-national-park">Mikumi National Park</a></li>
+                                                      <li><a href="/ruaha-national-park">Ruaha National Park</a></li>
+                                                      <li><a href="/selous-game-eserve">Selous Game Reserve</a></li>
+                                                  </ul>
+                                                </li>
+
+                                                <li><a href="#">Western Circuit</a>
+                                                  <ul>
+                                                    <li><a href="/lake-tanganyika">Lake Tanganyika</a></li>
+                                                    <li><a href="/gombe-stream-national-park">Gombe Stream National Park</a></li>
+                                                  </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li><a href="#">Mountain</a>
+                                            <ul>
+                                                <li><a href="/kilimanjaro-all-plans">Kilimanjaro Routes</a>
+                                                  <ul>
+                                                      <li><a href="/lemosho-seven-days">7 Days Lemosho Route</a></li>
+                                                      <li><a href="/lemosho-eight-days">8 Days Lemosho Route</a></li>
+                                                      <li><a href="/marangu-five-days">5 Days Marangu Route</a></li>
+                                                      <li><a href="/marangu-six-days">6 Days Marangu Route </a></li>
+                                                      <li><a href="/northern-circuit-eight-days">8 Days Northern Circuit Route</a></li>
+                                                      <li><a href="/northern-circuit-nine-days">9 Days Northern Circuit Route</a></li>
+                                                      <li><a href="/machame-six-days">6 Days Machame Route</a></li>
+                                                      <li><a href="/machame-seven-days">7 Days Machame Route</a></li>
+                                                      <li><a href="/rongai-six-days">6 Days Rongai Route</a></li>
+                                                      <li><a href="/rongai-seven-days">7 Days Rongai Route</a></li>
+                                                      <li><a href="/umbwe-six-days">6 Days Umbwe Route</a></li>
+                                                      <li><a href="/umbwe-seven-days">7 Days Umbwe Route</a></li>
+                                                      <li><a href="/mweka">Mweka Route</a></li>
+                                                  </ul>
+                                                </li>
+
+                                                <li><a href="/meru">Meru</a></li>
+
+                                                <li><a href="/ol-doinyo-lengai">Ol Doinyo Lengai</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li><a href="/zanzibar-all-plans">Zanzibar</a>
+                                            <ul>
+                                                <li><a href="#">Lodges & Beach</a>
+                                                  <ul>
+                                                      <li><a href="/sunshine-hotel-nungwe">Sunshine Hotel-Nungwe</a></li>
+                                                      <li><a href="/jafery-house-spa-stone-town">Jafery House & Spa-Stone Town</a></li>
+                                                      <li><a href="/zenji-hotel-stone-town">Zenji Hotel-Stone Town</a></li>
+                                                      <li><a href="/lemon-house-stone-town">Lemon House-Stone Town</a></li>
+                                                      <li><a href="/diamond-mapenzi-kiwengwe">Diamond Mapenzi-Kiwengwe</a></li>
+                                                  </ul>
+                                                </li>
+
+                                                <li><a href="#">Tours & Excussion</a>
+                                                  <ul>
+                                                      <li><a href="/evening-walk-in-stone-town">Evening walk in stone town</a></li>
+                                                      <li><a href="/sundown-dhow-cruise">Sundown dhow Cruise</a></li>
+                                                      <li><a href="/zanzibar-spice-tour">Zanzibar spice tour</a></li>
+                                                      <li><a href="/the-jozani-forest">The Jozani Forest</a></li>
+                                                      <li><a href="/stone-town-tour">Stone Town Tour</a></li>
+                                                      <li><a href="/prison-island">Prison Island</a></li>
+                                                      <li><a href="/the-dolphin">The Dolphin</a></li>
+                                                  </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li><a href="/one-day-all-plans">ONE DAY PROGRAMS</a>
+                                            <ul>
+                                                <li><a href="/lake-chala">Lake Chala</a></li>
+                                                <li><a href="/mandara-hut">Mandara Hut</a></li>
+                                                <li><a href="/materuni-waterfalls">Materuni Waterfalls</a></li>
+                                                <li><a href="/marangu-waterfalls">Marangu Waterfalls</a></li>
+                                                <li><a href="/kikuletwa-hot-springs">Kikuletwa Hot Springs</a></li>
+                                                <li><a href="/Olpopongi-masai-museum">Olpopongi Masai Museum</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">PAGES</a>
+                                            <ul>
+                                                <li><a href="/feeds">Feeds</a></li>
+                                                <li><a href="/about">About Us</a></li>
+                                                <!--<li><a href="/signin/">Register/ Sign In</a></li>-->
+                                                <li><a href="/contactus">Contact Us</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.html">ABOUT</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu Area end -->
+        </header>
+        <!--End of Header Area-->
+        <!--Banner Area Start-->
+        <div class="banner-area about-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title text-center">
+                            <div class="title-border">
+                                <h1><span>{{route.route_name}}</span></h1>
+                            </div>
+                            <p class="text-white">{{route.about_route}}.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <ul class="breadcrumb">
+                            <li><a href="index.html">Home</a></li>
+                            <li>{{route.route_name}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End of Banner Area-->
+        <!--Blog Post Area Start-->
+        <div class="blog-post-area section-padding">
+            <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                      <div class="section-title text-center">
+                          <div class="title-border">
+                              <h1><span>Trip Info:</span></h1>
+                          </div>
+                          <p>Trip Name: {{the_trip.trip_name}}</p>
+                          <p>Departing On: {{the_trip.depature_date}}</p>
+                          <p>Returning On: {{the_trip.return_date}}</p>
+                          <p>Trip Duration: {{the_trip.trip_duration}} Days</p>
+                          <p>Price is: {{the_trip.price}}$</p>
+                      </div>
+                  </div>
+                    <div class="col-md-9">
+                      {% if form.errors %}
+                      <div class="col-md-12">
+                          <div class="section-title text-center">
+                              <div class="title-border">
+                                  <h1 id="reding"><span>NOT VALID</span></h1>
+                              </div>
+                              {% for errors in form.errors %}
+                              <p>{{ form.errors }}</p>
+                              {% endfor %}
+                          </div>
+                      </div>
+                      {% endif %}
+                        <div class="leave-comment">
+                            <h4 class="blog-title"><span>Book Now</span></h4>
+                            <form action="/booking_mountain/{{the_trip.id}}" method="post" id="comment">{%csrf_token%}
+                                <div class="comment-form">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <label class="required">First Name</label>
+                                            <p class="credentials">{{form.fi_name}}</p>
+
+                                            <label class="required">Last Name</label>
+                                            <p class="credentials">{{form.la_name}}</p>
+
+                                            <label class="required">Email</label>
+                                            <p class="credentials">{{form.email}}</p>
+
+                                            <label class="required">Email Again</label>
+                                            <p class="credentials">{{form.email2}}</p>
+
+                                            <label>Number of Adults</label>
+                                            <p class="credentials">{{form.adults_number}}</p>
+
+                                            <label>Number of Children</label>
+                                            <p class="credentials">{{form.children_number}}</p>
+
+                                        </div>
+                                        <div class="col-md-7">
+                                            <label class="required">Phone Number</label>
+                                            <p class="credentials">{{form.phone_number}}</p>
+
+                                            <label>Prefered Destination</label>
+                                            <p class="credentials">{{form.prefered_destination}}</p>
+
+                                            <label>Any Special Requests</label>
+                                            <p class="credentials">{{form.special_request}}</p>
+
+                                        </div>
+                                    </div>
+                                    <input type="submit" class="comment-btn" value="Book Now">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End of Blog Post Area -->
+
+        <!--Advertise Area Start-->
+        <div class="advertise-area hidden-sm hidden-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>If you need help don't hesitate to <a href="/contactus">Contact Us </a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End of Advertise Area-->
+        <!--Partner Area Start-->
+        <div class="partner-area section-bottom-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title text-center">
+                            <div class="title-border">
+                                <h1>Our <span>Partners</span></h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="partner-carousel carousel-style-two">
+                        <div class="col-md-3">
+                            {% if partners.partner_one_picture %}
+                              <a href="{{partners.partner_one_url}}"><img src="/static/{{partners.partner_one_picture}}" alt=""></a>
+                            {%endif%}
+                        </div>
+                        <div class="col-md-3">
+                            {% if partners.partner_two_picture %}
+                              <a href="{{partners.partner_two_url}}"><img src="/static/{{partners.partner_two_picture}}" alt=""></a>
+                            {%endif%}
+                        </div>
+                        <div class="col-md-3">
+                          {% if partners.partner_three_picture %}
+                            <a href="{{partners.partner_three_url}}"><img src="/static/{{partners.partner_three_picture}}" alt=""></a>
+                          {%endif%}
+                        </div>
+                        <div class="col-md-3">
+                          {% if partners.partner_four_picture %}
+                            <a href="{{partners.partner_four_url}}"><img src="/static/{{partners.partner_four_picture}}" alt=""></a>
+                          {%endif%}
+                        </div>
+                        <div class="col-md-3">
+                          {% if partners.partner_five_picture %}
+                            <a href="{{partners.partner_five_url}}"><img src="/static/{{partners.partner_five_picture}}" alt=""></a>
+                          {%endif%}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End of Partner Area-->
+
+        <!--Footer Widget Area Start-->
+        <div class="footer-widget-area footer-widget-two">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-4">
+                        <div class="single-footer-widget contact-text-info">
+                            <h4>Contact Us</h4>
+                            <div class="footer-widget-list">
+                                <ul>
+                                    <li class="icon send">Popote Africa Adventures Ltd, P.O.Box, 1199 Moshi-Tanzania</li>
+                                    <li class="icon envelope">Info@popoteafrica.com</li>
+                                    <li class="icon phone">+ 255 757 190 784 <br>+ 255 785 190 784</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 hidden-md hidden-sm">
+                        <div class="single-footer-widget">
+                            <h4>Moutain</h4>
+                            <div class="footer-widget-list">
+                                <ul class="widget-lists">
+                                    <li><a href="/best-kilimanjaro-climbing-time">When To climb Kili</a></li>
+                                    <li><a href="/kilimanjaro-pack-list">Kilimanjaro Pack List</a></li>
+                                    <li><a href="/tips-kilimanjaro-climbs">Tips Kilimanjaro Climbs</a></li>
+                                    <li><a href="/our-guides-potters">Our Guides & Potters</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-3">
+                        <div class="single-footer-widget">
+                            <h4>Safari</h4>
+                            <div class="footer-widget-list">
+                                <ul class="widget-lists">
+                                    <li><a href="/animal-migrations">Animal Migrations</a></li>
+                                    <li><a href="/how-to-plan-your-safari">How to plan your Safari</a></li>
+                                    <li><a href="/tanzania-safari-pack-list">Tanzania Safari PackList</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 hidden-sm">
+                        <div class="single-footer-widget">
+                            <h4>Resources</h4>
+                            <div class="footer-widget-list">
+                                <ul class="widget-lists">
+                                    <li><a href="/faq">F.A.Qs</a></li>
+                                    <li><a href="/terms_and_conditions">Terms & Coniditions</a></li>
+                                    <li><a href="/about_tanzania">About Tanzania</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-5">
+                        <div class="single-footer-widget">
+                            <h4>Latest Feeds</h4>
+                            <div class="footer-widget-list twitter-news">
+                                <ul>
+                                  {%if feeds%}
+                                      {% for feeds in feeds|slice:":2" %}
+                                            <li><a href="#">@{{feeds.nick_name}}</a> {{feeds.feed_body}}. <a href="/feeds">More</a></li>
+                                      {% endfor %}
+                                  {%endif%}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="footer-link">
+                            <a href="https://www.facebook.com/Popote-Africa-Adventures-184604468295790/"><i class="fa fa-facebook"></i></a>
+                            <a href="https://twitter.com/popoteafricaadv"><i class="fa fa-twitter"></i></a>
+                            <a href="https://plus.google.com/117345957049689170148"><i class="fa fa-google-plus"></i></a>
+                            <a href="https://linkedin.com/in/popote-africa-adventures"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/popote_africa_adventures"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="payment-image">
+                            <img src="{% static "img/payment.png"%}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End of Footer Widget Area-->
+
+        <!--Footer Area Start-->
+        <div class="footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-5 col-sm-12">
+                        <span>Copyright © 2016 <a href="/home">Popoteafrica</a>. All rights reserved.</span>
+                        <span>Created By <a href="https://www.facebook.com/ivan.philip2">Ivan Makando.</a></span>
+                    </div>
+                    <div class="col-lg-8 col-md-7 col-sm-12">
+                        <nav>
+                            <ul id="footer-menu">
+                                <li><a href="/home">Home</a></li>
+                                <li><a href="/about">About Us</a></li>
+                                <li><a href="/feeds">Feeds</a></li>
+                                <li><a href="/contactus">Contact Us</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End of Footer Area-->
+
+<!--<script src="{% static "js/vendor/modernizr-2.8.3.min.js"%}"/></script>-->
+        <!-- jquery
+        ============================================ -->
+            <script type="text/javascript" src="{% static "js/vendor/jquery-1.12.3.min.js"%}"></script>
+
+        <!-- bootstrap JS
+        ============================================ -->
+            <script type="text/javascript" src="{% static "js/bootstrap.min.js"%}"></script>
+
+            <!-- nivo slider js
+        ============================================ -->
+        <script src="{% static "lib/nivo-slider/js/jquery.nivo.slider.js"%}" type="text/javascript"></script>
+
+        <script type="text/javascript" src="{% static "lib/nivo-slider/home.js"%}"></script>
+
+        <!-- wow JS
+        ============================================ -->
+            <script type="text/javascript" src="{% static "js/wow.min.js"%}"></script>
+
+        <!-- price-slider JS
+        ============================================ -->
+            <script type="text/javascript" src="{% static "js/jquery-price-slider.js"%}"></script>
+
+        <!-- meanmenu JS
+        ============================================ -->
+            <script type="text/javascript" src="{% static "js/jquery.meanmenu.js"%}"></script>
+
+        <!-- owl.carousel JS
+        ============================================ -->
+            <script type="text/javascript" src="{% static "js/owl.carousel.min.js"%}"></script>
+
+        <!-- scrollUp JS
+        ============================================ -->
+            <script type="text/javascript" src="{% static "js/jquery.scrollUp.min.js"%}"></script>
+
+        <!-- Waypoints JS
+        ============================================ -->
+            <script type="text/javascript" src="{% static "js/waypoints.min.js"%}"></script>
+
+        <!-- Counter Up JS
+        ============================================ -->
+            <script type="text/javascript" src="{% static "js/jquery.counterup.min.js"%}"></script>
+
+        <!-- plugins JS
+        ============================================ -->
+            <script type="text/javascript" src="{% static "js/plugins.js"%}"></script>
+
+        <!-- main JS
+        ============================================ -->
+            <script type="text/javascript" src="{% static "js/main.js"%}"></script>
+
+    </body>
+</html>
+
+
+
+
+<!-- wow JS
+============================================ -->
+    <script src="js/wow.min.js"></script>
+
+<!-- meanmenu JS
+============================================ -->
+    <script src="js/jquery.meanmenu.js"></script>
+
+<!-- owl.carousel JS
+============================================ -->
+    <script src="js/owl.carousel.min.js"></script>
+
+<!-- price-slider JS
+============================================ -->
+    <script src="js/jquery-price-slider.js"></script>
+
+<!-- scrollUp JS
+============================================ -->
+    <script src="js/jquery.scrollUp.min.js"></script>
+
+<!-- Waypoints JS
+============================================ -->
+    <script src="js/waypoints.min.js"></script>
+
+<!-- Counter Up JS
+============================================ -->
+    <script src="js/jquery.counterup.min.js"></script>
+
+<!-- plugins JS
+============================================ -->
+    <script src="js/plugins.js"></script>
+
+<!-- main JS
+============================================ -->
+    <script src="js/main.js"></script>
